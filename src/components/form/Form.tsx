@@ -67,7 +67,10 @@ const Form: React.FC = () => {
     setAlert('');
     setLoading(false);
 
-    if (!loading && !locations) {
+    if (
+      (!loading && !res?.data?.locations) ||
+      (!loading && res?.data?.locations.length === 0)
+    ) {
       setAlert('Nothing found, please try again');
     }
   };
