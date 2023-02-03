@@ -11,7 +11,8 @@ export const Loader = ({ loading }: any) => {
         position: 'absolute',
         top: '25%',
         left: '50%',
-        transition: 'translate(-50%, -50%)',
+        zIndex: '5',
+        transition: 'translate(-50%)',
       }}
       wrapperClass='MagnifyingGlass-wrapper'
       glassColor='#c0efff'

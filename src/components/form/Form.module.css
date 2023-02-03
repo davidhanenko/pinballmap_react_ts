@@ -1,9 +1,10 @@
 .searchContainer {
   padding-top: 50px;
   text-align: center;
-  width: 500px;
+  width: 400px;
   height: 100vh;
   background: #dddddd;
+  z-index: 3;
 }
 
 .alert {
@@ -86,4 +87,12 @@
   background-color: #b2b6b6;
   width: 60px;
   font-size: 14px;
+}
+
+@media (max-width: 700px) {
+  .searchContainer {
+    padding: 50px 0;
+    width: 100vw;
+    height: 100%;
+  }
 }

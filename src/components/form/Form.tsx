@@ -4,12 +4,14 @@ import { LocationContextType } from '../../lib/useLocation';
 import { useLocation } from '../../lib/useLocation';
 import Loader from '../Loader';
 import styles from './Form.module.css';
+import { isFunctionDeclaration } from 'typescript';
 
 const Form: React.FC = () => {
   const [alert, setAlert] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
 
   const {
+    locations,
     setLocations,
     latitude,
     setLatitude,
@@ -64,6 +66,10 @@ const Form: React.FC = () => {
     setLocations(res?.data?.locations);
     setAlert('');
     setLoading(false);
+
+    if (!loading && !locations) {
+      setAlert('Nothing found, please try again');
+    }
   };
 
   // clear all inputs and list of locations
@@ -99,7 +105,7 @@ const Form: React.FC = () => {
                 placeholder='Latitude'
                 className={styles.inputField}
                 value={latitude !== null ? latitude : ''}
-                onChange={e => setLatitude(+e.target.value)}
+                onChange={e => setLatitude(e.target.value)}
               />
               <input
                 name='longitude'
@@ -107,9 +113,7 @@ const Form: React.FC = () => {
                 placeholder='Longitude'
                 className={styles.inputField}
                 value={longitude !== null ? longitude : ''}
-                onChange={e =>
-                  setLongitude(+e.target.value)
-                }
+                onChange={e => setLongitude(e.target.value)}
               />
             </div>
             <fieldset className={styles.rangeSelect}>
@@ -149,7 +153,7 @@ const Form: React.FC = () => {
             className={styles.submitBtn}
             type='submit'
             aria-label='Submit'
-            disabled={loading}
+            disabled={!latitude || !longitude || loading}
           >
             Search
           </button>
