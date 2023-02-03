@@ -66,6 +66,9 @@
 .btn:hover {
   opacity: 0.6;
 }
+.btn:disabled {
+  background-color: #a4a4a4;
+}
 
 .locationBtn {
   composes: btn;
@@ -75,4 +78,12 @@
 .submitBtn {
   composes: btn;
   background-color: #5af35a;
+}
+
+.clearBtn {
+  composes: btn;
+  color: #000;
+  background-color: #b2b6b6;
+  width: 60px;
+  font-size: 14px;
 }
