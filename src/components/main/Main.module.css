@@ -1,5 +1,9 @@
 .mainContainer {
   display: flex;
+
+  background-image: url('../../img/pinball.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 @media (max-width: 700px) {

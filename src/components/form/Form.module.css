@@ -1,10 +1,9 @@
 .searchContainer {
-  padding-top: 50px;
   text-align: center;
-  width: 400px;
+  width: 450px;
   height: 100vh;
-  background: #dddddd;
-  z-index: 3;
+  background: #ddddddee;
+  z-index: 2;
 }
 
 .alert {
@@ -93,6 +92,6 @@
   .searchContainer {
     padding: 50px 0;
     width: 100vw;
-    height: 100%;
+    height: auto;
   }
 }

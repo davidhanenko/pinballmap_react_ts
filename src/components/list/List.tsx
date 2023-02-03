@@ -22,8 +22,25 @@ const List: React.FC = () => {
         {locations &&
           locations.length > 0 &&
           locations.map(location => (
-            <li key={location.id}>
-              {location.city} {location.name}
+            <li
+              className={styles.locationItem}
+              key={location.id}
+            >
+              <p className={styles.locationItemLine}>
+                {location.name}
+              </p>
+              <p className={styles.locationItemLine}>
+                {location.city}
+              </p>
+              <p className={styles.locationItemLine}>
+                {location.street}
+              </p>
+              <p className={styles.locationItemLine}>
+                {location.phone}
+              </p>
+              <p className={styles.locationItemLine}>
+                {location.distance}
+              </p>
             </li>
           ))}
       </ul>

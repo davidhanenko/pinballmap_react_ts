@@ -4,14 +4,12 @@ import { LocationContextType } from '../../lib/useLocation';
 import { useLocation } from '../../lib/useLocation';
 import Loader from '../Loader';
 import styles from './Form.module.css';
-import { isFunctionDeclaration } from 'typescript';
 
 const Form: React.FC = () => {
   const [alert, setAlert] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
 
   const {
-    locations,
     setLocations,
     latitude,
     setLatitude,
@@ -87,6 +85,7 @@ const Form: React.FC = () => {
   return (
     <>
       <div className={styles.searchContainer}>
+        <h1>PinBallMap</h1>
         <p className={styles.alert}>{alert}</p>
         <form
           onSubmit={handleSubmit}

@@ -1,13 +1,30 @@
 .listContainer {
   background-color: rgb(241, 241, 241);
   width: 500px;
+  opacity: 0.95;
   transform: translateX(-100%);
   z-index: 1;
   transition: all 0.3s;
+
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 .listContainerIsOpen {
   transform: translateX(0);
+}
+
+.locationItem {
+  list-style: none;
+  margin: 10px 0;
+  padding: 10px;
+  width: 90%;
+  border-bottom: 1px solid #f9970f;
+}
+
+.locationItemLine {
+  margin: 0;
+  font-size: 14px;
 }
 
 @media (max-width: 700px) {
