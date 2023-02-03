@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { LocationContextType } from '../../lib/useLocation';
 import { useLocation } from '../../lib/useLocation';
+import Loader from '../Loader';
 import styles from './Form.module.css';
 
 const Form: React.FC = () => {
@@ -154,6 +155,7 @@ const Form: React.FC = () => {
           </button>
         </form>
       </div>
+      <Loader loading={loading} />
     </>
   );
 };
